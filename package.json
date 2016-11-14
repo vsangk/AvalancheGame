@@ -1,0 +1,26 @@
+{
+  "name": "Avalanche",
+  "version": "1.0.0",
+  "description": "### Background Avalanche is a simple 2-d game of avoiding falling icicles. The objective is to the last as long as possible without getting hit by an icicle. The icicles will drop from the ceiling and as the round progresses, the number of falling icicles will increase.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsangk/AvalancheGame.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsangk/AvalancheGame/issues"
+  },
+  "homepage": "https://github.com/vsangk/AvalancheGame#readme",
+  "dependencies": {
+    "babel-core": "^6.18.2",
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^1.13.3"
+  }
+}

@@ -1,0 +1,16 @@
+#canvas {
+  position: absolute;
+}
+
+#leftClick {
+  position: relative;
+  max-width: 200px;
+  min-height: 600px;
+}
+
+#rightClick {
+  position: relative;
+  left: 600px;
+  max-width: 200px;
+  min-height: 600px;
+}
