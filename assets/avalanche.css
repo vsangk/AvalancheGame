@@ -1,5 +1,10 @@
+body {
+  font-family: helvetica;
+}
+
 #canvas {
   position: absolute;
+  background-color: #444;
 }
 
 #leftClick {
