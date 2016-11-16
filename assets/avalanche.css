@@ -2,9 +2,16 @@ body {
   font-family: helvetica;
 }
 
-#canvas {
+.bg-image {
+  background-image: url("./background-cave.png");
+  width: 800px;
+  height: 600px;
+  background-size: 800px 600px;
   position: absolute;
-  background-color: #444;
+}
+
+#canvas {
+  z-index: 1;
 }
 
 #leftClick {
