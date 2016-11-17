@@ -17,7 +17,7 @@ body {
   position: relative;
 }
 
-#tint {
+.overlay {
   position: absolute;
   width: 800px;
   height: 600px;
@@ -25,6 +25,10 @@ body {
 
 .dark-tint {
   background-color: rgba(0, 0, 0, 0.6);
+}
+
+.hidden {
+  visibility: hidden;
 }
 
 #canvas {
@@ -39,4 +43,16 @@ body {
 
   width: 40px;
   height: 40px;
+}
+
+#game-over-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#game-over-screen  p {
+  font-size: 40px;
+  color: #fff;
 }

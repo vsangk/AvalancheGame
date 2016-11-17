@@ -5,19 +5,22 @@
     <title>Avalanche Game</title>
     <script src="./bundle.js"></script>
     <link rel="stylesheet" href="./assets/avalanche.css">
-    <!-- <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
   </head>
   <body>
     <div class="header">
       <h1>Avalanche</h1>
     </div>
     <div class="main">
-      <div id="tint"></div>
+      <div class="overlay"></div>
       <canvas id="canvas" width="800" height="600"></canvas>
       <img class="settings" src="./assets/settings.png" />
-
-      <button id="start">start</button>
-      <button id="stop">stop</button>
+      
+      <button id="pause">pause</button>
+      <div id="game-over-screen" class="hidden">
+        <p>Game Over</p>
+        <p>Click Screen to Retry!</p>
+      </div>
     </div>
   </body>
 </html>
