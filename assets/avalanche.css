@@ -17,8 +17,14 @@ body {
   animation-delay: 200ms;
 }
 
-h2:hover {
+h2 {
+  font-size: 36px;
+  margin: 14px;
+}
+
+h2:hover, h4:hover {
   animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  color: #b2baf3;
   cursor: pointer;
 }
 
@@ -50,7 +56,7 @@ h2:hover {
 }
 
 .header-drop {
-  font-size: 50px;
+  font-size: 60px;
   z-index: 10;
   position: relative;
   animation-name: drop;
@@ -61,7 +67,7 @@ h2:hover {
 
 @keyframes drop {
   0%   {left:0px; top:0px;}
-  100%  {color:white; font-size: 60px; left:0px; top:180px;}
+  100%  {color:#b2baf3; font-size: 60px; left:0px; top:180px;}
 }
 
 .main {
@@ -85,6 +91,51 @@ h2:hover {
   visibility: hidden;
 }
 
+#settings-screen {
+  position: absolute;
+  background-color: rgba(0,0,0,0.6);
+  width: 300px;
+  height: 300px;
+  margin: 100px 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 60px;
+  border-radius: 10px;
+}
+
+#settings-screen h3 {
+  font-size: 24px;
+  margin: 0 0 40px;
+}
+
+#settings-screen input {
+  width: 20px;
+}
+
+#settings-exit {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 30px;
+}
+
+#settings-exit:hover {
+  cursor: pointer;
+  font-size: 36px;
+  color: #d27878;
+}
+
+#level-decrease:hover, #level-increase:hover {
+  cursor: pointer;
+}
+
+.starting-level {
+  display: inline;
+}
+
 #how-to-play {
   position: absolute;
   background-color: rgba(0,0,0,1);
@@ -96,6 +147,7 @@ h2:hover {
   align-items: center;
   box-sizing: border-box;
   padding: 60px;
+  border-radius: 10px;
 }
 
 #how-to-play-exit {
