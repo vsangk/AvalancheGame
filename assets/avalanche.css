@@ -40,6 +40,10 @@ h2:hover {
   }
 }
 
+#header {
+  margin-bottom: 10px;
+}
+
 #header span {
   font-size: 50px;
   z-index: 10;
@@ -83,6 +87,32 @@ h2:hover {
 
 #how-to-play {
   position: absolute;
+  background-color: rgba(0,0,0,1);
+  width: 600px;
+  height: 480px;
+  margin: 60px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 60px;
+}
+
+#how-to-play-exit {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+  font-size: 30px;
+}
+
+#how-to-play-exit:hover {
+  cursor: pointer;
+  font-size: 36px;
+  color: #d27878;
+}
+
+.how-to-play-pics {
+  padding-bottom: 40px;
 }
 
 #start-screen, #game-over-screen {
