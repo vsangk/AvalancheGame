@@ -22,8 +22,8 @@ In addition, this project will include:
 
 ### Architecture and Technologies
 The project will be implemented with the following technologies:
-- Vanilla JavaScript and jquery for overall structure and game logic
-- Easel.js with HTML5 Canvas for DOM manipulation and rendering
+- Vanilla JavaScript for overall structure and game logic
+- HTML5 Canvas for animation and rendering
 - Webpack to bundle and serve up the various scripts.
 
 board.js: this script will handle the logic for creating and updating necessary EaselJS elements and rendering them to the DOM
@@ -57,4 +57,4 @@ icicle.js: this script will handle the animation of falling icicles and the amou
 
 ### Bonus features
 - [ ] Add power-ups and power-downs that can either speed up or slow down the player
-- [ ] Have different types of icicles that fall out varying speeds
+- [ ] Have different types of icicles that fall at varying speeds

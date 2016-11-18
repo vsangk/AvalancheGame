@@ -8,18 +8,37 @@
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
   </head>
   <body>
-    <div class="header">
-      <h1>Avalanche</h1>
+    <div id="header" class="shake">
+      <span>Av</span>
+      <span>ala</span>
+      <span>nc</span>
+      <span>he</span>
     </div>
     <div class="main">
       <div class="overlay"></div>
       <canvas id="canvas" width="800" height="600"></canvas>
-      <img class="settings" src="./assets/settings.png" />
-      
-      <button id="pause">pause</button>
+
+      <div id="controls" class="controls">
+        <p>Game Controls:</p>
+        <p>← or A : Move Left</p>
+        <p>→ or D : Move Right</p>
+        <p>↵ Enter : Pause / Menu</p>
+      </div>
+      <div id="start-screen" class="overlay">
+        <h2>Start Game</h2>
+        <h2>How To Play</h2>
+      </div>
       <div id="game-over-screen" class="hidden">
         <p>Game Over</p>
         <p>Click Screen to Retry!</p>
+      </div>
+      <div id="how-to-play" class="hidden">
+        <div class="rules">
+          <p>Rules of the Game:</p>
+          <p>Survive for as long as you can!</p>
+          <p>The level will increase for every 500 points you get.</p>
+          <p>Each level increase will cause the icicles to fall faster and more often.</p>
+        </div>
       </div>
     </div>
   </body>

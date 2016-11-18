@@ -1,14 +1,63 @@
+#canvas {
+  background-image: url("./background-cave.png");
+  background-size: 800px 600px;
+}
+
 body {
   font-family: 'Allerta Stencil';
   background-color: #555;
+  color: #DDD;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header h1 {
+.shake {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  animation-delay: 200ms;
+}
+
+h2:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  cursor: pointer;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+#header span {
   font-size: 50px;
-  color: #afb2c7;
+  z-index: 10;
+}
+
+.header-drop {
+  font-size: 50px;
+  z-index: 10;
+  position: relative;
+  animation-name: drop;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes drop {
+  0%   {left:0px; top:0px;}
+  100%  {color:white; font-size: 60px; left:0px; top:180px;}
 }
 
 .main {
@@ -21,6 +70,7 @@ body {
   position: absolute;
   width: 800px;
   height: 600px;
+  z-index: 20;
 }
 
 .dark-tint {
@@ -31,21 +81,12 @@ body {
   visibility: hidden;
 }
 
-#canvas {
-  background-image: url("./background-cave.png");
-  background-size: 800px 600px;
-}
-
-.settings {
+#how-to-play {
   position: absolute;
-  left: 30px;
-  top: 100px;
-
-  width: 40px;
-  height: 40px;
 }
 
-#game-over-screen {
+#start-screen, #game-over-screen {
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -54,5 +95,4 @@ body {
 
 #game-over-screen  p {
   font-size: 40px;
-  color: #fff;
 }
