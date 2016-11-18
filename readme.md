@@ -1,7 +1,7 @@
 # Avalanche Game
 
 [Avalanche][avalanche]
-[avalanche]: https://vsangk.github.io/
+[avalanche]: https://vsangk.github.io/AvalancheGame/
 
 Avalanche is a simple 2-d game of avoiding falling icicles. The objective is to the last as long as possible without getting hit by an icicle. The icicles will drop from the ceiling and as the round progresses, the number of falling icicles will increase.
 
