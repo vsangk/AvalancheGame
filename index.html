@@ -8,65 +8,80 @@
     <link href="https://fonts.googleapis.com/css?family=Allerta+Stencil" rel="stylesheet">
   </head>
   <body>
-    <div id="header" class="shake">
-      <span>Av</span>
-      <span>ala</span>
-      <span>nc</span>
-      <span>he</span>
+    <div class="game">
+      <div id="header" class="shake">
+        <span>Av</span>
+        <span>ala</span>
+        <span>nc</span>
+        <span>he</span>
+      </div>
+
+      <div class="main">
+        <div class="overlay"></div>
+        <canvas id="canvas" width="800" height="600"></canvas>
+
+        <div id="start-screen" class="overlay">
+          <h2>Start Game</h2>
+          <h2>How To Play</h2>
+        </div>
+
+        <div id="game-over-screen" class="hidden">
+          <p>Game Over</p>
+          <p>Click Screen to Retry!</p>
+        </div>
+
+        <div id="how-to-play" class="hidden">
+          <div id="how-to-play-exit">x</div>
+          <div class="rules">
+            <p>Rules of the Game:</p>
+            <ul>
+              <li>Survive for as long as you can!</li>
+              <li>The level will increase for every 500 points you get.</li>
+              <li>Icicles fall faster and more often for every level.</li>
+            </ul>
+          </div>
+
+          <div class="how-to-play-pics">
+            <img src="./assets/penguin-single.png" />
+            <span>That's you!</span>
+          </div>
+          <div class="how-to-play-pics">
+            <img src="./assets/icicle-single.png" />
+            <span>Avoid these!</span>
+          </div>
+        </div>
+
+        <div id="settings-screen" class="hidden">
+          <h3>Settings</h3>
+          <div id="settings-exit">x</div>
+          <div class="starting-level">
+            <span style="margin-right: 4px">Starting Level: </span>
+            <span id="level-decrease"> ⇦ </span>
+            <span id="settings-level">1</span>
+            <span id="level-increase"> ⇨ </span>
+          </div>
+          <h4>Restart</h4>
+        </div>
+      </div>
     </div>
-    <div class="main">
-      <div class="overlay"></div>
-      <canvas id="canvas" width="800" height="600"></canvas>
-
-      <div id="controls" class="controls">
-        <p>Game Controls:</p>
-        <p>← or A : Move Left</p>
-        <p>→ or D : Move Right</p>
-        <p>↵ Enter : Pause / Menu</p>
-      </div>
-
-      <div id="start-screen" class="overlay">
-        <h2>Start Game</h2>
-        <h2>How To Play</h2>
-      </div>
-
-      <div id="game-over-screen" class="hidden">
-        <p>Game Over</p>
-        <p>Click Screen to Retry!</p>
-      </div>
-
-      <div id="how-to-play" class="hidden">
-        <div id="how-to-play-exit">x</div>
-        <div class="rules">
-          <p>Rules of the Game:</p>
+    <div class="sidebar">
+      <div class="sidebar-links">
           <ul>
-            <li>Survive for as long as you can!</li>
-            <li>The level will increase for every 500 points you get.</li>
-            <li>Icicles fall faster and more often for every level.</li>
+            <li><a href="https://github.com/vsangk" target="_blank">
+                <img src="https://res.cloudinary.com/openbistro/image/upload/v1481161418/github-logo_cva7pf.png">
+            </a></li>
+            <li><a href="https://www.linkedin.com/in/vince-sangkhae" target="_blank">
+                <img src="https://res.cloudinary.com/openbistro/image/upload/v1481161308/linkedin-logo_fa8wsn.png">
+            </a></li>
           </ul>
         </div>
-
-        <div class="how-to-play-pics">
-          <img src="./assets/penguin-single.png" />
-          <span>That's you!</span>
+        <div id="controls" class="controls">
+          <p class="controls-title">Game Controls:</p>
+          <p>← or A : Move Left</p>
+          <p>→ or D : Move Right</p>
+          <p>↵ Enter : Pause / Menu</p>
+          <p>M : Mute / Unmute</p>
         </div>
-        <div class="how-to-play-pics">
-          <img src="./assets/icicle-single.png" />
-          <span>Avoid these!</span>
-        </div>
-      </div>
-      
-      <div id="settings-screen" class="hidden">
-        <h3>Settings</h3>
-        <div id="settings-exit">x</div>
-        <div class="starting-level">
-          <span style="margin-right: 4px">Starting Level: </span>
-          <span id="level-decrease"> ⇦ </span>
-          <span id="settings-level">1</span>
-          <span id="level-increase"> ⇨ </span>
-        </div>
-        <h4>Restart</h4>
-      </div>
     </div>
   </body>
 </html>

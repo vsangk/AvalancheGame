@@ -60,6 +60,7 @@
 	  var canvas = document.getElementById('canvas');
 	  var overlay = document.getElementsByClassName('overlay')[0];
 	  var ctx = canvas.getContext('2d');
+	
 	  var globalId = void 0;
 	  var player = void 0,
 	      icicles = void 0,
@@ -69,18 +70,40 @@
 	      gameOver = void 0,
 	      gameSession = false;
 	
+	  var bgMusic = new Audio('./assets/bg-music.wav');
+	  bgMusic.loop = true;
+	  bgMusic.volume = 0.4;
+	  var sliding = new Audio('./assets/sliding.wav');
+	  sliding.volume = 0.3;
+	  sliding.loop = true;
+	
 	  window.addEventListener('keydown', function (e) {
 	    if (e.keyCode === 13 && gameSession && !gameOver) {
 	      pauseScreen();
+	    }
+	
+	    if (e.keyCode === 77) {
+	      toggleMute();
 	    }
 	
 	    ctx.key = e.keyCode;
 	  });
 	
 	  window.addEventListener('keyup', function (e) {
+	    sliding.pause();
 	    player.srcY = 0;
 	    ctx.key = false;
 	  });
+	
+	  var toggleMute = function toggleMute() {
+	    if (bgMusic.muted === true) {
+	      bgMusic.muted = false;
+	      sliding.muted = false;
+	    } else {
+	      bgMusic.muted = true;
+	      sliding.muted = true;
+	    }
+	  };
 	
 	  var newGame = function newGame() {
 	    var startinglevel = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
@@ -189,24 +212,28 @@
 	  var update = function update() {
 	    if (isPaused) {
 	      cancelAnimationFrame(globalId);
+	      bgMusic.pause();
 	    } else {
+	      bgMusic.play();
 	      tick += 1;
 	      if (tick % (50 * 10) === 0) {
 	        level += 1;
 	      }
 	      ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
-	      ctx.font = '30px arial';
+	      ctx.font = '30px Allerta Stencil';
 	      ctx.fillStyle = 'white';
 	      ctx.fillText('Score: ' + tick, 600, 120);
 	      ctx.fillText('Level: ' + level, 600, 150);
 	
 	      player.draw(ctx);
 	      if (ctx.key && ctx.key === 37 || ctx.key === 65) {
+	        sliding.play();
 	        player.srcY = 240;
 	        player.update(-4);
 	      }
 	      if (ctx.key && ctx.key === 39 || ctx.key === 68) {
+	        sliding.play();
 	        player.srcY = 288;
 	        player.update(4);
 	      }
@@ -252,7 +279,7 @@
 	    this.img = new Image();
 	    this.img.src = './assets/icicle.png';
 	    this.icicleBreak = new Audio('./assets/icicle_break.wav');
-	    this.icicleBreak.volume = 0.0;
+	    this.icicleBreak.volume = 0;
 	
 	    this.srcX = 14;
 	    this.srcY = 0;
@@ -303,8 +330,11 @@
 	      var _this2 = this;
 	
 	      this.icicles.forEach(function (icicle, idx) {
-	        if (icicle.destY >= 550) {
+	        if (icicle.destY === 540) {
 	          _this2.icicleBreak.play();
+	        }
+	
+	        if (icicle.destY >= 550) {
 	          _this2.srcY = 192;
 	          icicle.falling = false;
 	          icicle.destY = 0;
